@@ -1,0 +1,21 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: block-dvwa-shell-execution
+  namespace: dvwa-lab
+spec:
+  selector:
+    matchLabels:
+      app: dvwa
+  process:
+    matchPaths:
+      - path: /bin/sh
+      - path: /bin/bash
+      - path: /usr/bin/id
+      - path: /bin/cat
+    action: Block
+  file:
+    matchDirectories:
+      - dir: /var/run/secrets/kubernetes.io/serviceaccount/
+        recursive: true
+    action: Block
