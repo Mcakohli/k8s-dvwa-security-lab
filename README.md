@@ -20,7 +20,7 @@ The deployment runs within an isolated `dvwa-lab` namespace exposed via a `NodeP
 kubectl get pods,svc -n dvwa-lab
 ```
 
-![Cluster Verification Terminal](<./Cluster verification terminal.png>)
+<img src="./Screen%20shots/Cluster%20verification%20terminal.png" alt="Cluster Verification Terminal" width="850" />
 
 ---
 
@@ -36,7 +36,7 @@ kubectl get pods,svc -n dvwa-lab
 - **Exploitation:** Executed commands under the `www-data` service account and extracted the mounted Kubernetes Service Account JWT token from `/var/run/secrets/kubernetes.io/serviceaccount/token`.
 - **K8s Blast Radius:** Enables unauthorized API interrogation and privilege escalation against the cluster control plane (`kube-apiserver`).
 
-![Command Injection Exploit](<./Command injection.png>)
+<img src="./Screen%20shots/Command%20injection.png" alt="Command Injection Exploit" width="850" />
 
 ---
 
@@ -50,7 +50,7 @@ kubectl get pods,svc -n dvwa-lab
 - **Exploitation:** Extracted backend database records containing usernames and MD5 password hashes (`admin`, `Gordon`, `1337`, `pablo`).
 - **Impact:** Complete backend credential compromise enabling offline hash cracking.
 
-![SQL Injection Exploit](<./SQL injection.png>)
+<img src="./Screen%20shots/SQL%20injection.png" alt="SQL Injection Exploit" width="850" />
 
 ---
 
@@ -64,7 +64,7 @@ kubectl get pods,svc -n dvwa-lab
 - **Exploitation:** Executed client-side JavaScript executing in the active session context, triggering an alert dialog exposing `PHPSESSID`.
 - **Impact:** Session hijacking, cookie theft, and administrative CSRF.
 
-![Reflected XSS Exploit](<./Reflected XSS.png>)
+<img src="./Screen%20shots/Reflected%20XSS.png" alt="Reflected XSS Exploit" width="850" />
 
 ---
 
@@ -83,4 +83,4 @@ While web application firewalls (WAF) and code fixes address application bugs, c
 
 ## 👤 Author
 - **Rahul Kohli**
-- [LinkedIn Profile](https://www.linkedin.com/in/)
+- [GitHub Profile](https://github.com/McaKohli)
